@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <math.h>
+int getdigit (int num)
+{
+    int digit=0;
+    while(num>0)
+    {
+    digit++;
+    num=num/10;
+}
+return digit;
+}
+int main()
+{
+    int x,a,copy,sum=0;
+    scanf("%d",&x);
+    
+    copy=x;
+    while(x>0)
+    {
+        a=x%10;
+        sum=sum+pow(a,getdigit(copy));
+        x=x/10;
+    }
+    if(copy==sum)
+    {
+        printf("Armstrong number");
+    }
+        else
+        {
+        printf("Not a Armstrong number");
+    }
+
+    return 0;
+}
+
